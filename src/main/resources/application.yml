@@ -1,0 +1,13 @@
+datasources:
+  default:
+    driver-class-name: org.postgresql.Driver
+    db-type: postgres
+    dialect: POSTGRES
+    url: ${MICRONAUT_DATASOURCE_URL:`jdbc:postgresql://localhost:5432/identity`}
+    username: ${MICRONAUT_DATASOURCE_USERNAME:`postgres`}
+    password: ${MICRONAUT_DATASOURCE_PASSWORD:`postgres`}
+
+liquibase:
+  datasources:
+    default:
+      change-log: classpath:db/changelog/db.changelog-master.xml
